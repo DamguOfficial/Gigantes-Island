@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnwui6msw4ojg"]
+
+[ext_resource type="Texture2D" uid="uid://cfsq458axvjwt" path="res://img/minimap/player.webp" id="1_xwt2h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03ou0"]
+radius = 2666.03
+
+[node name="radar_minimap" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_03ou0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="radarUI" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 176.0
+offset_bottom = 176.0
+
+[node name="radar" type="TextureRect" parent="CanvasLayer/radarUI"]
+layout_mode = 2
+
+[node name="Player" type="Sprite2D" parent="CanvasLayer/radarUI/radar"]
+position = Vector2(48, 72)
+scale = Vector2(0.0826087, 0.0826087)
+texture = ExtResource("1_xwt2h")
